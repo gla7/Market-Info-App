@@ -1,0 +1,106 @@
+#quote-module {
+	border                     : 1px dotted #888;
+	background                 : white;
+	min-height                 : 200px;
+}
+
+.moduleContainer {
+	position                   : relative;
+	width                      : 365px;
+	margin-top                 : 15px;
+	margin-left                : 5px;
+	border-top                 : 3px solid #737373;
+}
+
+.name {
+	font-family                : Palatino;
+	text-transform             : uppercase;
+	font-size                  : 15px;
+	color                      : #424242;
+	width                      : 100px;
+}
+
+.infoRow {
+    position                   : relative;
+    width                      : 100%;
+    border-bottom              : 1px solid #dedede;
+}
+
+.leftHalfOfRow {
+	position                   : relative;
+	width                      : 49%;
+	display                    : inline-block;
+}
+
+.rightHalfOfRow {
+	position                   : relative;
+	width                      : 49%;
+	display                    : inline-block;
+}
+
+.leftValue {
+    text-align                 : left;
+}
+
+.rightValue {
+    text-align                 : right;
+}
+
+.pStandardMargin {
+    margin                     : 5px;
+}
+
+.lastPrice {
+    font-family                : "Palatino Linotype";
+    font-size                  : 21px;
+    color                      : #424242;
+}
+
+.changeAndChangePercent {
+    font-family                : "Palatino Linotype";
+    font-size                  : 17px;
+    color                      : #008400;
+}
+
+.statNameOrDate {
+    color                      : #737373;
+    font-family                : Sans-Serif;
+    font-size                  : 11px;
+}
+
+.statNumber {
+    font-family                : Sans-Serif;
+    font-size                  : 14px;
+    font-weight                : 600;
+}
+
+.quoteInput {
+    padding-top                : 5px;
+    padding-bottom             : 5px;
+}
+
+.getQuoteInput {
+    width                      : 49%;
+    height                     : 25px;
+    border-top-left-radius     : 5px;
+    border-bottom-left-radius  : 5px;
+    outline                    : none;
+    border                     : 1px solid #dedede;
+    margin-right               : 5px;
+}
+
+.getQuoteButton {
+	font-family                : Sans-Serif;
+	font-size                  : 14px;
+    width                      : 48%;
+    height                     : 30px;
+    border-top-right-radius    : 5px;
+    border-bottom-right-radius : 5px;
+    outline                    : none;
+    border                     : 1px solid #dedede;
+    background-color           : gray;
+  	background                 : -webkit-linear-gradient(#F6F6F6, #E1E2E1);
+	background                 : -o-linear-gradient(#F6F6F6, #E1E2E1);
+	background                 : -moz-linear-gradient(#F6F6F6, #E1E2E1);
+	background                 : linear-gradient(#F6F6F6, #E1E2E1);
+}
