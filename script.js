@@ -72,7 +72,19 @@ $(document).ready(function () {
 
 
 		// PRESENTS NUMBER AS STRING WITH COMMAS EVERY 3 CIPHERS FROM RIGHT TO LEFT
-	  	var numArr = num.toLocaleString().split(",")
+	  	function toLocaleNumber (num) {
+			var reverseArrayString = num.toString().split(".")[0].split("").reverse()
+			var counter = 0
+			for ( var i = 0; i < reverseArrayString.length; i++ ) {
+			    if ( !reverseArrayString[(i + 1)*(3) + counter] ) {
+			      	break
+			    }
+			    reverseArrayString.splice(((i + 1)*(3) + counter),0,",")
+			    counter++
+			}
+			return reverseArrayString.reverse().join("")
+		}
+		var numArr = toLocaleNumber(num).split(",")
 	  	// PRESENTS NUMBER AS STRING WITH COMMAS EVERY 3 CIPHERS FROM RIGHT TO LEFT
 
 
@@ -165,9 +177,9 @@ $(document).ready(function () {
 		if ( date.getDate() === today.getYesterday().getDate() && date.getMonth() === today.getYesterday().getMonth() && date.getYear() === today.getYesterday().getYear() ) {
 			return "As of yesterday at " + time(date)
 		} else if (  date.getDate() === today.getDate() && date.getMonth() === today.getMonth() && date.getYear() === today.getYear()  ) {
-			return "As of " + date.toString().split(" ")[4]
+			return "As of " + time(date)
 		} else {
-			return "As of " + month[date.getMonth()] + " " + date.getDate() + " " + Number(1900 + Number(date.getYear())) + " at " + date.toString().split(" ")[4]
+			return "As of " + month[date.getMonth()] + " " + date.getDate() + " " + Number(1900 + Number(date.getYear())) + " at " + time(date)
 		}
 		// FINDS WHETHER TO DISPLAY THE TIME AND DATE, THE TIME TODAY, OR THE TIME YESTERDAY DEPENDING ON THE DATE INPUT
 
