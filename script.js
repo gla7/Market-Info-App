@@ -1,8 +1,10 @@
-function pageController () {
+$(document).ready(function () {
 
 	var initialCode = "MSFT"
 
 	function getData (code) {
+
+		document.getElementById("getQuoteInput").value = ""
 
 		$('#name').html("loading...")
         $('#lastPrice').html("loading...")
@@ -138,6 +140,6 @@ function pageController () {
 
 	getData(initialCode)
 	
-}
+})
 
-window.onload = pageController
+// window.onload = pageController
