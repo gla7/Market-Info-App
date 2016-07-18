@@ -141,5 +141,3 @@ $(document).ready(function () {
 	getData(initialCode)
 	
 })
-
-// window.onload = pageController
