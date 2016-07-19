@@ -12,15 +12,21 @@ $(document).ready(function () {
 		$('#getQuoteInput').val("") 
 		// CLEARS THE INPUT BOX
 
+
+		// USING FIND WITHIN THIS SELECTOR FOR PERFORMANCE ENHANCE AS PER http://stackoverflow.com/questions/2342282/jquery-find-versus-context-selection
+		var $quoteModuleContainer = $("#quote-module")
+		// USING FIND WITHIN THIS SELECTOR FOR PERFORMANCE ENHANCE AS PER http://stackoverflow.com/questions/2342282/jquery-find-versus-context-selection
+
+
 		// SETS THE VARIABLE FIELDS TO LOADING WHILE RETRIEVING INFO FROM API
-		$('#name').html("loading...")
-        $('#lastPrice').html("loading...")
-        $('#changeAndChangePercent').html("loading...")
-        $('#lowToHigh').html("loading...")
-        $('#open').html("loading...")
-        $('#volume').html("loading...")
-        $('#marketCap').html("loading...")
-        $('#timestamp').html("loading...")
+		$quoteModuleContainer.find('#name').html("loading...")
+        $quoteModuleContainer.find('#lastPrice').html("loading...")
+        $quoteModuleContainer.find('#changeAndChangePercent').html("loading...")
+        $quoteModuleContainer.find('#lowToHigh').html("loading...")
+        $quoteModuleContainer.find('#open').html("loading...")
+        $quoteModuleContainer.find('#volume').html("loading...")
+        $quoteModuleContainer.find('#marketCap').html("loading...")
+        $quoteModuleContainer.find('#timestamp').html("loading...")
         // SETS THE VARIABLE FIELDS TO LOADING WHILE RETRIEVING INFO FROM API
 
 
@@ -37,14 +43,14 @@ $(document).ready(function () {
 			        } else {
 			        	$('#changeAndChangePercent').css('color', '#008400')
 			        }
-			        $('#name').html(data.Name)
-			        $('#lastPrice').html(numberFormat(data.LastPrice))
-			        $('#changeAndChangePercent').html(numberFormat(data.Change) +" (" + numberFormat(data.ChangePercent) + "%)")
-			        $('#lowToHigh').html(numberFormat(data.Low) + " - " + numberFormat(data.High))
-			        $('#open').html(numberFormat(data.Open))
-			        $('#volume').html(numberFormat(data.Volume))
-			        $('#marketCap').html(numberFormat(data.MarketCap))
-			        $('#timestamp').html(dateFormat(new Date(data.Timestamp)))
+			        $quoteModuleContainer.find('#name').html(data.Name)
+			        $quoteModuleContainer.find('#lastPrice').html(numberFormat(data.LastPrice))
+			        $quoteModuleContainer.find('#changeAndChangePercent').html(numberFormat(data.Change) +" (" + numberFormat(data.ChangePercent) + "%)")
+			        $quoteModuleContainer.find('#lowToHigh').html(numberFormat(data.Low) + " - " + numberFormat(data.High))
+			        $quoteModuleContainer.find('#open').html(numberFormat(data.Open))
+			        $quoteModuleContainer.find('#volume').html(numberFormat(data.Volume))
+			        $quoteModuleContainer.find('#marketCap').html(numberFormat(data.MarketCap))
+			        $quoteModuleContainer.find('#timestamp').html(dateFormat(new Date(data.Timestamp)))
 			    } else {
 			    	alert(data.Message)
 			    	getData(initialCode)
