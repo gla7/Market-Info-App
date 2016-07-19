@@ -89,6 +89,7 @@
 }
 
 .getQuoteButton {
+    color                      : #424242;
 	font-family                : Sans-Serif;
 	font-size                  : 14px;
     width                      : 48%;
